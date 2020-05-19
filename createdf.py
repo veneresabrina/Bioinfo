@@ -5,17 +5,14 @@ Created on Wed Nov  6 12:37:38 2019
 
 @author: sabrina
 
-All of the kidney data for each of the samples is store in the dataframe named "data"
+All of the kidney and lung data for each of the samples is stored in the dataframe named "data"
 
 """
 import os, glob 
 import pandas as pd
 
-# get current directory
-# current_dir = "/home/sabrina/Documenti/Bioinformatica/Progetto"
-# go to the directory where the files are (KIDNEY)
-kidney_dir = '/home/sabrina/Scrivania/Bioinformatica/Progetto/gdc_kidney_download_20191002_151641.408115'
-lung_dir = '/home/sabrina/Scrivania/Bioinformatica/Progetto/gdc_lung_download_20191002_152306.154805'
+kidney_dir = 'gdc_kidney_download_20191002_151641.408115'
+lung_dir = 'gdc_lung_download_20191002_152306.154805'
 directories = [kidney_dir, lung_dir]
 for dirs in directories:
     os.chdir(dirs)
@@ -35,5 +32,5 @@ for dirs in directories:
     
     col = ["GDC_Aliquot", "Chromosome", "Start", "End", "Num_Probes", "Segment_mean"]
     data.columns = col
-#datac = data.to_csv(r"/home/sabrina/Documenti/Bioinformatica/Progetto/kidney_data.csv", index=False, header=True)
-#datal = data.to_csv(r"/home/sabrina/Documenti/Bioinformatica/Progetto/lung_data.csv", index=False, header=True)
+datac = data.to_csv(r"kidney_data.csv", index=False, header=True)
+datal = data.to_csv(r"lung_data.csv", index=False, header=True)
