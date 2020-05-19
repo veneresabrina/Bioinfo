@@ -3,6 +3,11 @@
 Created on Thu Dec  5 11:34:19 2019
 
 @author: vener
+
+given the pat_ind file (containing the indeces of the chosen training samples)
+and the feat_var file (containing the name of the chosen segments after the feature selection)
+gives in output the train and test sets to perform machine learning
+
 """
 
 
