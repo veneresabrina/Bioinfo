@@ -4,7 +4,8 @@ Created on Tue Nov 19 15:48:19 2019
 
 @author: vener
 
-modificato per funzionare su philae
+modified to work on external server
+takes in input the dataframes of each chromosome and puts them together in a single dataframe 
 
 """
 
@@ -24,6 +25,5 @@ for chromosome in CHRs:
     df.insert(0,'Chromosome',chromosome)
     dataframe = dataframe.append(df)
 
-#dataframe.to_csv(r"D:\vener\Documents\Bioinformatica\progetto\Bioinfo-master\df_allchr.csv" , index=True, header=True)
-dataframe.to_csv(r"/mnt/d/vener/Documents/Bioinformatica/progetto/Bioinfo-master/df_allchr.csv" , index=True, header=True)
+dataframe.to_csv(r"df_allchr.csv" , index=True, header=True)
 
