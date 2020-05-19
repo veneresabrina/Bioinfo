@@ -3,6 +3,9 @@
 Created on Mon Feb 17 10:14:00 2020
 
 @author: vener
+
+tumor related genes were obtained from cancermine website: http://bionlp.bcgsc.ca/cancermine/
+
 """
 
 import csv
