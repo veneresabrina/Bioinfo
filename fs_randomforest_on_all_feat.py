@@ -5,6 +5,7 @@ Created on Thu May 14 20:40:29 2020
 @author: vener
 
 apply random forest to perform feature selection
+computational cost is high, therefore it was not used later in the project
 
 """
 
@@ -23,19 +24,14 @@ with open("segments_in_df.txt", "r") as f:
         row = row.rstrip('\n')
         row = row.rstrip('\r')
         features.append(row)
-step = 20000
-r = list(range(0,len(features),step))
-r2 = list(range(step,len(features),step))
-r2.append(len(features))
+
 rand_pat = []
 with open("train_test_set/pat_ind_train.txt", "r") as f:
     for line in f:
         rand_pat.append(f.readline())
 
-for i in range(len(r)):
-    # selecting only first chunk of features and the 1500 random patients
-    X = pd.read_csv("df_T.csv", usecols = features[r[i]:r2[i]])
-    X = X.iloc[rand_pat]
+X = pd.read_csv("df_T.csv",index_col=0)
+X.reset_index(inplace=True,drop=True)
 
 Y = []
 for ind in X.index:
@@ -45,7 +41,7 @@ for ind in X.index:
         Y.append(1)  # lung
 
 
-clf = ExtraTreesClassifier(n_estimators=50)
+clf = ExtraTreesClassifier(n_estimators=10)
 clf = clf.fit(X, Y)
 model = SelectFromModel(clf, prefit=True)
 #X_new = model.transform(X)
@@ -58,7 +54,7 @@ for ind in range(len(clf.feature_importances_)):
 
 
 cont = 0
-with open("train_test_set/features_tree.txt", "a") as output:
+with open("train_test_set/features_tree.txt", "w") as output:
     for name in features_selected:
         writer = csv.writer(output, lineterminator='\n')            
         writer.writerow([name])
