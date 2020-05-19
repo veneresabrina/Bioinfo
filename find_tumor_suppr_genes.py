@@ -3,6 +3,10 @@
 Created on Fri May  8 09:59:41 2020
 
 @author: vener
+
+tumor related genes were obtained from cancermine website: http://bionlp.bcgsc.ca/cancermine/
+
+
 """
 import pandas as pd
 import numpy as np
