@@ -4,7 +4,7 @@ Created on Wed May 13 13:01:51 2020
 
 @author: vener
 
-calcolo del numero delle features in ogni set ottenuto
+printing the number of features from each set previously obtained
 
 """
 
