@@ -4,7 +4,7 @@ Created on Thu Nov 28 18:14:07 2019
 
 @author: vener
 
-modificare df_allchr per salvare anche il numero di cromosoma di provenienza del segmento
+modifying the dataframe to save the chromosome the segment belongs to
 
 """
 
